@@ -4,3 +4,4 @@ kind: Kustomization
 
 resources:
   - ./awx/awx-operator
+  - ./awx/awx-instance
