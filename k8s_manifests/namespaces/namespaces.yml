@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argocd
+  name: awx
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: awx
+  name: gitops
 ---
 apiVersion: v1
 kind: Namespace
