@@ -4,5 +4,6 @@ kind: Kustomization
 
 resources:
   - ./namespaces
-  - ./awx/awx-operator
-  - ./awx/awx-instance
+  # - ./awx/awx-operator
+  # - ./awx/awx-instance
+  - ./gitops/argocd
