@@ -7,3 +7,4 @@ resources:
   # - ./awx/awx-operator
   # - ./awx/awx-instance
   - ./gitops/argocd
+  - ./gitops/guestbook
