@@ -4,5 +4,11 @@ kind: Kustomization
 
 namespace: argocd
 
-resources:
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.7.2/manifests/install.yaml
+helmCharts:
+  - name: argo-cd
+    repo: https://argoproj.github.io/argo-helm
+    includeCRDs: true
+    # valuesInline:
+    #   server: {}
+    releaseName: argo-cd
+    version: 5.46.7
