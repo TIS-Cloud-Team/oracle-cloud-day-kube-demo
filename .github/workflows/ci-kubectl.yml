@@ -1,0 +1,31 @@
+---
+name: CI - Kubectl
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
+
+# See: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
+# env:
+#   OCI_CLI_USER: "${{ secrets.OCI_CLI_USER }}"
+#   OCI_CLI_TENANCY: "${{ secrets.OCI_CLI_TENANCY }}"
+#   OCI_CLI_FINGERPRINT: "${{ secrets.OCI_CLI_FINGERPRINT }}"
+#   OCI_CLI_KEY_CONTENT: "${{ secrets.OCI_CLI_KEY_CONTENT }}"
+#   OCI_CLI_REGION: "${{ secrets.OCI_CLI_REGION }}"
+
+jobs:
+  kubectl:
+    name: Kubectl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v4
+
+      # - name: Configure kubectl.
+      #   uses: oracle-actions/configure-kubectl-oke@v1.3.2
+      #   with:
+      #     cluster: ${{ secrets.OKE_CLUSTER_OCID }}
