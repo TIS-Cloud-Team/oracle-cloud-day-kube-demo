@@ -1,5 +1,5 @@
 ---
-name: CI - Kubectl
+name: CI - OKE Kubectl
 
 on:
   push:
@@ -11,15 +11,20 @@ on:
 
 # See: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
 # env:
+#   # user=ocid1.user
 #   OCI_CLI_USER: "${{ secrets.OCI_CLI_USER }}"
+#   # tenancy=ocid1.tenancy
 #   OCI_CLI_TENANCY: "${{ secrets.OCI_CLI_TENANCY }}"
+#   # fingerprint=99:87
 #   OCI_CLI_FINGERPRINT: "${{ secrets.OCI_CLI_FINGERPRINT }}"
+#   # key_file=sandbox.pem
 #   OCI_CLI_KEY_CONTENT: "${{ secrets.OCI_CLI_KEY_CONTENT }}"
+#   # region=us-sanjose-1
 #   OCI_CLI_REGION: "${{ secrets.OCI_CLI_REGION }}"
 
 jobs:
   kubectl:
-    name: Kubectl
+    name: Apply
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
