@@ -26,12 +26,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Show oci version.
-        run: oci --version
+        uses: oracle-actions/run-oci-cli-command@v1.1.1
+        with:
+          # oci --version
+          command: '--version'
 
       - name: Show oci help.
-        run: oci --help
+        uses: oracle-actions/run-oci-cli-command@v1.1.1
+        with:
+          # oci --help
+          command: '--help'
 
       - name: List IAM users.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
         with:
+          # oci iam user list
           command: 'iam user list'
