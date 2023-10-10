@@ -42,5 +42,5 @@ jobs:
       - name: List IAM users.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
         with:
-          command: 'iam user list --compartment-id as --debug'
+          command: 'iam compartment list --compartment-id-in-subtree=true --debug'
           silent: false
