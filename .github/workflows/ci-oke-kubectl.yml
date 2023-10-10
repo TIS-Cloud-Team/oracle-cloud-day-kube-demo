@@ -41,10 +41,10 @@ jobs:
           version: 'latest' # default is latest (stable)
           token: ${{ secrets.GITHUB_TOKEN }} # only needed if version is 'latest'
 
-      - name: Print kubectl version.
+      - name: Show kubectl version.
         run: kubectl version
 
-      - name: Print helm version.
+      - name: Show helm version.
         run: helm version
 
       - name: List all namespaces.
@@ -59,11 +59,11 @@ jobs:
       - name: Set PUBLIC_IP.
         run: echo "PUBLIC_IP=$(kubectl get svc http-https-echo --namespace examples --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
 
-      - name: Print PUBLIC_IP.
+      - name: Show PUBLIC_IP.
         run: echo ${PUBLIC_IP}
 
       - name: Curl public ip endpoint.
         run: curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/
 
-      - name: Print __VERSION from curl response.
+      - name: Grep __VERSION from curl response.
         run: curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/ | grep __VERSION | xargs
