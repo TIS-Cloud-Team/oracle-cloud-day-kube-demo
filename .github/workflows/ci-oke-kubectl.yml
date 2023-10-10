@@ -34,3 +34,9 @@ jobs:
         uses: oracle-actions/configure-kubectl-oke@v1.3.2
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
+
+      - name: Print kubectl version.
+        run: kubectl version
+
+      - name: List all namespaces.
+        run: kubectl get ns
