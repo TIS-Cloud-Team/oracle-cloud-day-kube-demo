@@ -40,3 +40,6 @@ jobs:
 
       - name: List all namespaces.
         run: kubectl get ns
+
+      - name: Run apply.
+        run: (cd k8s_manifests && make apply)
