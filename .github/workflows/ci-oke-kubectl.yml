@@ -54,7 +54,7 @@ jobs:
         run: (cd k8s_manifests && make apply)
 
       - name: Sleep.
-        run: sleep 5
+        run: sleep 10
 
       - name: Set PUBLIC_IP.
         run: echo "PUBLIC_IP=$(kubectl get svc http-https-echo --namespace examples --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
