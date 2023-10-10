@@ -25,20 +25,13 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      - name: Retrieve the OCID of a named compartment in tenancy
-        uses: oracle-actions/run-oci-cli-command@v1.1.1
-        id: find-compartment-id
-        with:
-          command: 'iam compartment list --compartment-id-in-subtree=true'
-          query: "data[?name=='testing'].id"
+      - name: Show oci version.
+        run: oci --version
 
-      - name: Retrieve the display name and shape of the instances in my compartment
-        uses: oracle-actions/run-oci-cli-command@v1.1.1
-        id: find-instances
-        with:
-          command: 'compute instance list --compartment-id ${{ steps.find-compartment-id.outputs.raw_output }}'
-          query: 'data[*].{name: \"display-name\", shape: shape}'
+      - name: Show oci help.
+        run: oci --help
 
-      - name: List the display name and shape of the instances in my compartment
-        run: |
-          echo ${{ steps.find-instances.outputs.output }} | jq .
+      - name: List IAM users.
+        uses: oracle-actions/run-oci-cli-command@v1.1.1
+        with:
+          command: 'iam user list'
