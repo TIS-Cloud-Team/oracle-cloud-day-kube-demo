@@ -35,6 +35,12 @@ jobs:
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
 
+      - name: Configure helm.
+        uses: azure/setup-helm@v3
+        with:
+           version: 'latest' # default is latest (stable)
+           token: ${{ secrets.GITHUB_TOKEN }} # only needed if version is 'latest'
+
       - name: Print kubectl version.
         run: kubectl version
 
