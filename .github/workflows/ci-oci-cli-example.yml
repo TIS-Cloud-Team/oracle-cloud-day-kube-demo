@@ -25,21 +25,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      # - name: Show oci version.
-      #   uses: oracle-actions/run-oci-cli-command@v1.1.1
-      #   with:
-      #     # oci --version
-      #     command: '--version'
-      #     silent: false
-
-      # - name: Show oci help.
-      #   uses: oracle-actions/run-oci-cli-command@v1.1.1
-      #   with:
-      #     # oci --help
-      #     command: '--help'
-      #     silent: false
-
-      - name: List IAM users.
+      - name: List compartments.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
         with:
           command: 'iam compartment list --compartment-id-in-subtree=true'
