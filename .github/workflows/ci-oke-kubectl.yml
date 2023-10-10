@@ -44,6 +44,9 @@ jobs:
       - name: Print kubectl version.
         run: kubectl version
 
+      - name: Print helm version.
+        run: helm version
+
       - name: List all namespaces.
         run: kubectl get ns
 
