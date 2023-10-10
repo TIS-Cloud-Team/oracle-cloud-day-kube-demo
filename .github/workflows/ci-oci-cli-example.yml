@@ -42,6 +42,5 @@ jobs:
       - name: List IAM users.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
         with:
-          # oci iam user list
-          command: 'iam user list'
+          command: 'iam user list --compartment-id as --debug'
           silent: false
