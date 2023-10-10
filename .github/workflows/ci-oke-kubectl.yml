@@ -52,3 +52,6 @@ jobs:
 
       - name: Run apply.
         run: (cd k8s_manifests && make apply)
+
+      - name: Curl endpoint.
+        run: curl --connect-timeout 5 --max-time 30 http://192.9.136.65/
