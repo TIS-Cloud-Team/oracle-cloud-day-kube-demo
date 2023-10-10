@@ -30,12 +30,14 @@ jobs:
         with:
           # oci --version
           command: '--version'
+          silent: false
 
       - name: Show oci help.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
         with:
           # oci --help
           command: '--help'
+          silent: false
 
       - name: List IAM users.
         uses: oracle-actions/run-oci-cli-command@v1.1.1
