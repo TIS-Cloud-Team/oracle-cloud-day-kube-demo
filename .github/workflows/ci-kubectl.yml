@@ -36,7 +36,6 @@ jobs:
       # Deploy the application.
       - name: Deploy.
         run: |
-          kubectl delete -f apps/http-echo
           kubectl apply -f apps/http-echo
 
       # Show the public ip address.
