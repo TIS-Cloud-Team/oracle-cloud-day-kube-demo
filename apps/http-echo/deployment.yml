@@ -19,7 +19,7 @@ spec:
           image: hashicorp/http-echo
           env:
             - name: ECHO_TEXT
-              value: "11:58pm"
+              value: "Greetings! Today is Oracle Cloud Day!"
           ports:
             - name: http
               containerPort: 5678
