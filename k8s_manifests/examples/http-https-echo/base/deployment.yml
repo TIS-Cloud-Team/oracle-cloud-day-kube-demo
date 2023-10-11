@@ -9,14 +9,13 @@ spec:
     spec:
       containers:
       - name: http-https-echo
-        # image: mendhak/http-https-echo:30
         image: mendhak/http-https-echo:29
         imagePullPolicy: Always
         env:
         - name: ECHO_INCLUDE_ENV_VARS
           value: "1"
         - name: __TIME
-          value: "12:58pm"
+          value: "1:02pm"
         ports:
         - name: http
           containerPort: 8080
