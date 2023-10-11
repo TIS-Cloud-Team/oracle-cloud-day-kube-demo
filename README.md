@@ -1,4 +1,4 @@
-# Oracle Cloud Day - Demo
+# Oracle Cloud Day - Kubernetes Demo
 
 This demo shows how to quickly deploy from GitHub Actions to Oracle's Container Engine for Kubernetes (OKE) service.
 
