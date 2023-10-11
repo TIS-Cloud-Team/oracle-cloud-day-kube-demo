@@ -1,12 +1,14 @@
 ---
 name: CI - Kubectl
 
+# Run on push to any branch.
 on:
   push:
     branches:
-      - main
+      - "*"
 
-# Required environment variables.
+# These environment variables are required for using the 'oracle-actions/configure-kubectl-oke' github action.
+# The secrets are defined in https://github.com/TIS-Cloud-Team/oracle-cloud-day-kube-demo/settings/secrets/actions.
 # Docs: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
 env:
   OCI_CLI_USER: "${{ secrets.OCI_CLI_USER }}"
@@ -20,20 +22,23 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      # Git checkout the demo code.
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
+      # Configure kubectl to connect to the kubernetes cluster running in Oracle Cloud.
       # Docs: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
       - name: Configure kubectl.
         uses: oracle-actions/configure-kubectl-oke@v1.3.2
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
 
-      - name: Run apply.
-        run: kubectl apply -f apps/http-echo
+      # Deploy the application.
+      - name: Deploy.
+        run: |
+          kubectl apply -f apps/http-echo
 
-      - name: Set PUBLIC_IP.
-        run: echo "PUBLIC_IP=$(kubectl get service http-echo --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
-
-      - name: Show PUBLIC_IP.
-        run: echo ${PUBLIC_IP}
+      # Show the public ip address.
+      - name: Get IP address.
+        run: |
+          echo $(kubectl get service http-echo --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
