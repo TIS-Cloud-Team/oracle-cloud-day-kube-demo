@@ -18,8 +18,8 @@ env:
   OCI_CLI_REGION: "${{ secrets.OCI_CLI_REGION }}"
 
 jobs:
-  kubectl:
-    name: Apply
+  example:
+    name: Example
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
