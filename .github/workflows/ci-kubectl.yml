@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - '*'
 
 # See: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
 env:
