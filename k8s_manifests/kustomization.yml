@@ -7,4 +7,5 @@ resources:
   # - ./awx/awx-operator
   # - ./awx/awx-instance
   # - ./argocd/argocd
+  # - ./argocd/argocd-http-https-echo
   - ./examples/http-https-echo
