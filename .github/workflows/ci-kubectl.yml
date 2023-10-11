@@ -30,6 +30,11 @@ jobs:
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
 
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "dir=$(pip cache dir)"
+
       - name: Show kubectl version.
         run: kubectl version --short
 
