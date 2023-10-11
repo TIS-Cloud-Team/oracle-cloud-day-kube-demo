@@ -25,12 +25,12 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      - name: Cache pip cache.
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/pip
-          key: ${{ runner.os }}-pip
+      # - name: Cache pip cache.
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: |
+      #       ~/.cache/pip
+      #     key: ${{ runner.os }}-pip
 
       - name: Configure kubectl.
         uses: oracle-actions/configure-kubectl-oke@v1.3.2
