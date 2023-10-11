@@ -37,9 +37,6 @@ jobs:
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
 
-      - name: Show kubectl version.
-        run: kubectl version --short
-
       - name: Run apply.
         run: kubectl apply -f apps/http-echo
 
