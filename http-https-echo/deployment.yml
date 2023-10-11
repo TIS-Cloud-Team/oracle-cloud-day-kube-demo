@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: http-https-echo
-          image: mendhak/http-https-echo:29
+          image: mendhak/http-https-echo
           imagePullPolicy: Always
           env:
             - name: ECHO_INCLUDE_ENV_VARS
