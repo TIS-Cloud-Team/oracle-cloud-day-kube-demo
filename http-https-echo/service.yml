@@ -6,6 +6,8 @@ metadata:
   namespace: default
 spec:
   type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: http-https-echo
   ports:
     - name: http
       protocol: TCP
