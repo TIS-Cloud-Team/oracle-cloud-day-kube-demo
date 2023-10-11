@@ -25,15 +25,17 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
+      - name: Cache PIP cache.
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip
+
       - name: Configure kubectl.
         uses: oracle-actions/configure-kubectl-oke@v1.3.2
         with:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
-
-      - name: Get pip cache dir
-        id: pip-cache
-        run: |
-          echo "dir=$(pip cache dir)"
 
       - name: Show kubectl version.
         run: kubectl version --short
