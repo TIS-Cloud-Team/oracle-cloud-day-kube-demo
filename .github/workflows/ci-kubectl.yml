@@ -38,7 +38,16 @@ jobs:
         run: |
           kubectl apply -f apps/http-echo
 
+      # Set the public ip address.
+      - name: Set IP address.
+        run: |
+          echo "PUBLIC_IP=$(kubectl get svc http-echo --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
+
       # Show the public ip address.
       - name: Get IP address.
         run: |
-          echo $(kubectl get service http-echo --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
+          echo "${PUBLIC_IP}"
+
+      - name: Curl public ip endpoint.
+        run: |
+          curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/
