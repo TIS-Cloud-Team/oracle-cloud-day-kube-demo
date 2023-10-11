@@ -3,6 +3,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: http-https-echo
+  namespace: default
 spec:
   # type: ClusterIP
   type: LoadBalancer
