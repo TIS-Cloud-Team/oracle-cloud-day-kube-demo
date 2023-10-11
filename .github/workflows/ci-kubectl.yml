@@ -36,9 +36,6 @@ jobs:
       - name: Run apply.
         run: kubectl apply -f apps/http-echo
 
-      - name: Sleep.
-        run: sleep 5
-
       - name: Set PUBLIC_IP.
         run: echo "PUBLIC_IP=$(kubectl get svc http-echo --namespace default --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
 
