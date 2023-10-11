@@ -25,7 +25,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      - name: Cache PIP cache.
+      - name: Cache Pip cache.
         uses: actions/cache@v3
         with:
           path: |
