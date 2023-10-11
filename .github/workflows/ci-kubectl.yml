@@ -19,7 +19,7 @@ env:
 
 jobs:
   kubectl:
-    name: Apply
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
