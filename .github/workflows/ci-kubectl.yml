@@ -33,11 +33,8 @@ jobs:
       - name: Show kubectl version.
         run: kubectl version
 
-      - name: List all namespaces.
-        run: kubectl get ns
-
       - name: Run apply.
-        run: (cd k8s_manifests && make apply)
+        run: kubectl apply -f apps/http-https-echo
 
       - name: Sleep.
         run: sleep 10
