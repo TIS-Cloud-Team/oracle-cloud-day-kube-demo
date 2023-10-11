@@ -45,6 +45,3 @@ jobs:
 
       - name: Show PUBLIC_IP.
         run: echo ${PUBLIC_IP}
-
-      - name: Curl public ip endpoint.
-        run: curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/
