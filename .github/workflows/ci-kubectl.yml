@@ -6,7 +6,8 @@ on:
     branches:
       - main
 
-# See: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
+# Required environment variables.
+# Docs: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
 env:
   OCI_CLI_USER: "${{ secrets.OCI_CLI_USER }}"
   OCI_CLI_TENANCY: "${{ secrets.OCI_CLI_TENANCY }}"
@@ -22,6 +23,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
+      # Docs: https://github.com/marketplace/actions/configure-kubectl-for-oracle-container-engine-for-kubernetes-oke
       - name: Configure kubectl.
         uses: oracle-actions/configure-kubectl-oke@v1.3.2
         with:
