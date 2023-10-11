@@ -47,6 +47,3 @@ jobs:
 
       - name: Curl public ip endpoint.
         run: curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/
-
-      - name: Grep __TIME from curl response.
-        run: curl -fsSL --connect-timeout 5 --max-time 30 http://${PUBLIC_IP}/ | grep __TIME | xargs
