@@ -8,17 +8,3 @@ apply: build
 
 prune:
 	kubectl apply --prune --all --filename manifest.yml
-
-# Apps
-
-argocd:
-	kubectl --namespace argocd port-forward service/argocd-server 8080:80
-
-argocd-user:
-	@echo admin
-
-argocd-pass:
-	kubectl --namespace argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode ; echo
-
-http-https-echo:
-	kubectl --namespace examples port-forward service/http-https-echo 8080:80
