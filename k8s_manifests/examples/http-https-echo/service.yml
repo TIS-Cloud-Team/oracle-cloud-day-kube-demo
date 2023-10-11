@@ -5,7 +5,6 @@ metadata:
   name: http-https-echo
   namespace: default
 spec:
-  # type: ClusterIP
   type: LoadBalancer
   ports:
     - name: http
