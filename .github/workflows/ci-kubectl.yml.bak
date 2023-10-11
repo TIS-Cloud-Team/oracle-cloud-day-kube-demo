@@ -34,13 +34,13 @@ jobs:
         run: kubectl version
 
       - name: Run apply.
-        run: kubectl apply -f apps/http-echo
+        run: kubectl apply -f apps/http-https-echo
 
       - name: Sleep.
         run: sleep 5
 
       - name: Set PUBLIC_IP.
-        run: echo "PUBLIC_IP=$(kubectl get svc http-echo --namespace default --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
+        run: echo "PUBLIC_IP=$(kubectl get svc http-https-echo --namespace default --output jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
 
       - name: Show PUBLIC_IP.
         run: echo ${PUBLIC_IP}
