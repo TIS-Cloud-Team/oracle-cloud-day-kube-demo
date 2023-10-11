@@ -3,7 +3,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: http-echo
-  namespace: default
 spec:
   type: LoadBalancer
   selector:
