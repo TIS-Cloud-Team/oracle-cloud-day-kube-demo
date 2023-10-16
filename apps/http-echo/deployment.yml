@@ -18,7 +18,7 @@ spec:
           image: hashicorp/http-echo
           env:
             - name: ECHO_TEXT
-              value: "Today is Friday!"
+              value: "Today is Tuesday!"
           ports:
             - name: http
               containerPort: 5678
