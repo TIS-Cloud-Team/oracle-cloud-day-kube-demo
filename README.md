@@ -2,11 +2,19 @@
 
 ## Introduction
 
-This demo shows how to quickly deploy from GitHub Actions to Oracle's Container Engine for Kubernetes (OKE) service.
+This demo shows how to quickly deploy from GitHub Actions to Oracle's Container Engine for Kubernetes (OKE) service. On a git push, the application in [`apps/http-echo`](./apps/http-echo) is deployed by GitHub Actions. The application is deployed to OKE, a load balancer is created, and the application is available at http://129.159.33.175/ (as of Oct 17, 2023).
 
-The GitHub Actions workflow is defined in [`.github/workflows/ci-kubectl.yml`](./.github/workflows/ci-kubectl.yml). On a push, the application in [`apps/http-echo`](./apps/http-echo) is deployed and available at http://129.159.33.175/ (as of Oct 17, 2023).
+GitHub Actions is a Continuous Integration and Continuous Delivery ([CI/CD](https://en.wikipedia.org/wiki/CI/CD)) service, managed by GitHub. It's a system for building, testing, and deploying code.
 
-The container definition for the demo app can be found in [`apps/http-echo/deployment.yml`](./apps/http-echo/deployment.yml). The service definition (which creates the load balancer) can be found in [`apps/http-echo/service.yml`](./apps/http-echo/service.yml).
+Oracle Container Engine for Kubernetes ([OKE](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/)) is a Kubernetes as a service platform, managed by Oracle. [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes) is an open-source container orchestration system for automating software deployment, auto-scaling, and operations.
+
+## Code
+
+The GitHub Actions workflow is defined in [`.github/workflows/ci-kubectl.yml`](./.github/workflows/ci-kubectl.yml).
+
+The container definition for the demo app can be found in [`apps/http-echo/deployment.yml`](./apps/http-echo/deployment.yml).
+
+The service definition (which creates the load balancer) can be found in [`apps/http-echo/service.yml`](./apps/http-echo/service.yml).
 
 ## Benefits
 
