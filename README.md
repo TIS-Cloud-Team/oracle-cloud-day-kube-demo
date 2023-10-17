@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This demo shows how to quickly deploy from GitHub Actions to Oracle's Container Engine for Kubernetes (OKE) service. On a git push, the application in [`apps/http-echo`](./apps/http-echo) is deployed by GitHub Actions. The application is deployed to OKE, a load balancer is created, and the application is available at http://129.159.33.175/ (as of Oct 17, 2023).
+This demo shows how to quickly deploy an application from GitHub Actions to Oracle's Container Engine for Kubernetes (OKE) service. On git push, the application defined in [`apps/http-echo`](./apps/http-echo) is deployed by GitHub Actions. The application is deployed to OKE, a load balancer is created, and the application is available at http://129.159.33.175/.
 
-GitHub Actions is a Continuous Integration and Continuous Delivery ([CI/CD](https://en.wikipedia.org/wiki/CI/CD)) service, managed by GitHub. It's a system for building, testing, and deploying code.
+GitHub Actions is a Continuous Integration and Continuous Delivery ([CI/CD](https://en.wikipedia.org/wiki/CI/CD)) service, managed by GitHub. It's a system for automating building, testing, and deploying code.
 
 Oracle Container Engine for Kubernetes ([OKE](https://www.oracle.com/cloud/cloud-native/container-engine-kubernetes/)) is a Kubernetes as a service platform, managed by Oracle. [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes) is an open-source container orchestration system for automating software deployment, auto-scaling, and operations.
 
